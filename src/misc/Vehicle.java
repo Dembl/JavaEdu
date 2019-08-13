@@ -1,4 +1,8 @@
-public class Vehicle {
+package misc;
+
+import inter.Moveable;
+
+public abstract class Vehicle implements Moveable {
     private double maxSpeed;
     private double weight;
     private double maxRange;

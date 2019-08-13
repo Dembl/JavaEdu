@@ -1,4 +1,9 @@
-public class Plane extends Vehicle {
+package misc;
+
+import inter.Noiseable;
+
+
+public class Plane extends Vehicle implements Noiseable{
     private String engineType;
     private String type;
 
@@ -16,5 +21,14 @@ public class Plane extends Vehicle {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public void sound() {
+        System.out.println("UUUUUUUUUUUUUUUUUH");
+    }
+
+    @Override
+    public void move() {
+        System.out.println("I fly at " + this.getMaxSpeed() + " kmph");
     }
 }

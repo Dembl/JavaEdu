@@ -1,5 +1,10 @@
+package misc;
 
-public class Person {
+import inter.Moveable;
+import inter.Noiseable;
+
+
+public class Person implements Noiseable, Moveable {
     //field
     private int weight;
     private int height;
@@ -87,4 +92,13 @@ public class Person {
     }
 
 
+    @Override
+    public void move() {
+        System.out.println("step-by-step");
+    }
+
+    @Override
+    public void sound() {
+        System.out.println("AGHHHHHRR");
+    }
 }

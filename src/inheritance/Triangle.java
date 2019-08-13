@@ -13,7 +13,7 @@ public class Triangle extends Shape{
         return sides[0]+sides[1]+ sides[2];
     }
     public double getSquare(){
-        double poluPerimeter = (sides[0]+sides[1]+ sides[2])/2;
+        double poluPerimeter = this.getPerimeter()/2;
         return Math.sqrt(poluPerimeter*(poluPerimeter-sides[0])*(poluPerimeter-sides[1])*(poluPerimeter-sides[2]));
     }
 }
