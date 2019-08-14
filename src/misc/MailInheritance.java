@@ -9,7 +9,6 @@ public abstract class MailInheritance {
 
     public static void main(String[] args) {
 
-
         Car volvo = new Car();
         volvo.setMaxRange(600.0);
         volvo.setMaxSpeed(70.0);
@@ -55,12 +54,9 @@ public abstract class MailInheritance {
 //        System.out.println("Периметр прямоугольника равен " + rectangle.getPerimeter());
 //        System.out.println("Площадь прямоугольника равна " + rectangle.getSquare());
         System.out.println(getBiggestSquare(shapes));
+        System.out.println(getBiggerPerimeter(shapes));
+        System.out.println(getAverageBigSquare(shapes));
     }
-
-    public  void shapeStat(Shape shapes){
-
-    }
-
 
     public static Shape getBiggestSquare(Shape[] shapes){
         Shape gooodShape = shapes[0];
@@ -72,6 +68,33 @@ public abstract class MailInheritance {
 
         return gooodShape;
     }
+
+    public static Shape getBiggerPerimeter(Shape[] shapes){
+        Shape gooodShape = shapes[0];
+        for (int i = 1; i <shapes.length ; i++) {
+            if(shapes[i].getPerimeter()>gooodShape.getPerimeter()) gooodShape = shapes[i];
+        }
+        return gooodShape;
+    }
+
+    public static Shape getAverageBigSquare(Shape[] shapes){
+        double average = 0;
+        Shape goodShape = shapes[0];
+        for (int i = 0; i <shapes.length ; i++) {
+            average= (average+shapes[i].getPerimeter());
+        }
+        average/=10;
+        for (int i = 0; goodShape!=shapes[i] ; i++) {
+            if(shapes[i].getPerimeter()-average>0) goodShape=shapes[i];
+        }
+
+        for (int i = 0; i <shapes.length ; i++) {
+            if (shapes[i].getPerimeter()-average>0 && shapes[i].getSquare()>goodShape.getSquare() ) goodShape=shapes[i];
+
+        }
+        return goodShape;
+    }
+
 
 
     public static void printVehicleInfo(Vehicle vehicle){
