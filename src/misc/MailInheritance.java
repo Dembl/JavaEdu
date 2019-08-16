@@ -79,14 +79,25 @@ public abstract class MailInheritance {
 
     public static Shape getAverageBigSquare(Shape[] shapes){
         double average = 0;
-        Shape goodShape = shapes[0];
+        Shape goodShape = null;
         for (int i = 0; i <shapes.length ; i++) {
             average= (average+shapes[i].getPerimeter());
         }
-        average/=10;
-        for (int i = 0; goodShape!=shapes[i] ; i++) {
-            if(shapes[i].getPerimeter()-average>0) goodShape=shapes[i];
+        average/=shapes.length;
+
+        for (int i = 0; goodShape == null; i++) {
+            if(shapes[i].getPerimeter() > average)
+                goodShape=shapes[i];
+
         }
+
+//        int x = 0;
+//        while (goodShape == null && x < shapes.length)
+//        {
+//            if(shapes[x].getPerimeter() > average)
+//                goodShape=shapes[x];
+//            x++;
+//        }
 
         for (int i = 0; i <shapes.length ; i++) {
             if (shapes[i].getPerimeter()-average>0 && shapes[i].getSquare()>goodShape.getSquare() ) goodShape=shapes[i];
