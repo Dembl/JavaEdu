@@ -35,8 +35,6 @@ public class ReferenceExchange {
      test.get(2);
      test.get(3);
      test.get(4);
-     test.get(5);
-     test.get(15);
     }
 
 }
