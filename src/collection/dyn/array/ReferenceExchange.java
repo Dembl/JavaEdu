@@ -2,6 +2,8 @@ package collection.dyn.array;
 
 import misc.Car;
 
+import java.util.Arrays;
+
 public class ReferenceExchange {
     public static void main(String[] args) {
 //        Car car = new Car();
@@ -30,11 +32,22 @@ public class ReferenceExchange {
      test.add(42);
      test.add(754);
      test.add(23557);
-     test.get(0);
-     test.get(1);
-     test.get(2);
-     test.get(3);
-     test.get(4);
+//     System.out.println(test.get(0));
+//     System.out.println(test.get(1));
+//     System.out.println(test.get(2));
+//     System.out.println(test.get(3));
+//     System.out.println(test.get(4));
+//
+//     System.out.println(test.get(8));
+     int[] xx= {1,23,4,5,6,7,8,8,7,87,878};
+
+     int [] y = Arrays.copyOfRange(xx,1,4);
+
+     for (int i : y) {
+      System.out.print(i+ " ");
+     }
+
+
     }
 
 }
