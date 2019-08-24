@@ -13,7 +13,7 @@ public class DynamicCollectionStarter {
         System.out.println(test.get(2));
         System.out.println(test.get(5));
         test.showArray();
-        test.remove(2);
+        test.remove(0);
         test.showArray();
 
     }
