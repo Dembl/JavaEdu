@@ -32,6 +32,11 @@ public class ReferenceExchange {
      test.add(42);
      test.add(754);
      test.add(23557);
+     System.out.println(test.get(2));
+     System.out.println(test.get(7));
+//     test.showArray();
+     test.remove(2);
+//     test.showArray();
 //     System.out.println(test.get(0));
 //     System.out.println(test.get(1));
 //     System.out.println(test.get(2));
@@ -39,15 +44,15 @@ public class ReferenceExchange {
 //     System.out.println(test.get(4));
 //
 //     System.out.println(test.get(8));
-     int[] xx= {1,23,4,5,6,7,8,8,7,87,878};
-
-     int [] y = Arrays.copyOfRange(xx,1,4);
-
-     for (int i : y) {
-      System.out.print(i+ " ");
-     }
-
-
+//     int[] xx= {1,23,4,5,6,7,8,8,7,87,878};
+//
+//     int [] y = Arrays.copyOfRange(xx,1,4);
+//
+//     for (int i = 0; i<y.length;i++) {
+//      System.out.print(y[i]+ " ");
+//     }
+//
+        }
     }
 
-}
+
