@@ -33,7 +33,19 @@ public class DynamicArrayImpl implements DynamicArray {
 
     @Override
     public void remove(int index) throws NoSuchElementException {
-
+//        if (index > currentSize)
+//            throw new NoSuchElementException("Запрошеный элемент отсутствует!");
+//        int[] tempArray = new int[array.length];//выделяем место под точно такой же массив
+//
+//        for (int i = 0; i < index; i++) {
+//            tempArray[i] = array[i];//копируем элементы ПЕРЕД удаляемым (они сохраняют свои индексы)
+//        }
+//
+//        for (int i = index+1; i < currentSize; i++) {
+//            tempArray[i-1] = array[i];//копируем элементы ПОСЛЕ удаляемога (они смешают индексы на 1)
+//        }
+//        array = tempArray;
+//        currentSize--;//уменшаем размер массива на 1;
         if (index > currentSize)
             throw new NoSuchElementException("Запрошеный элемент отсутствует!");
         int tempArray[]= Arrays.copyOfRange(array,0,index);

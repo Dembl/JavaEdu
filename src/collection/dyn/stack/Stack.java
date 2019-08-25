@@ -1,6 +1,6 @@
 package collection.dyn.stack;
 
 public interface Stack {
-    void push();
+    void push(int value);
     void pop();
 }
