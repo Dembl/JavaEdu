@@ -1,5 +1,7 @@
 package collection.dyn.array;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
@@ -59,6 +61,19 @@ public class DynamicArrayImpl implements DynamicArray {
         }
         array = tempArray;
         currentSize--;
+    }
+
+
+    //формат файла первая строчка - размер
+    //вторая строчка значения перечсленные через запятую
+    @Override
+    public void saveToFile(File file) throws IOException {
+
+    }
+
+    @Override
+    public void readFromFile(File file) throws IOException {
+
     }
 
     public void showArray(){
