@@ -10,6 +10,6 @@ public interface DynamicArray {
     void remove(int index) throws NoSuchElementException;
 //    void showArray ();
 
-    void saveToFile(File file) throws IOException;
+    void saveToFile(File fail) throws Exception;
     void readFromFile(File file) throws IOException;
 }

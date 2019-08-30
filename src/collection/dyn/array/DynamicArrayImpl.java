@@ -1,7 +1,6 @@
 package collection.dyn.array;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
@@ -67,9 +66,25 @@ public class DynamicArrayImpl implements DynamicArray {
     //формат файла первая строчка - размер
     //вторая строчка значения перечсленные через запятую
     @Override
-    public void saveToFile(File file) throws IOException {
+    public void saveToFile(File file) throws Exception {
+        FileWriter fileArray = new FileWriter("resources/numbersArray.txt");
 
+        try {
+            fileArray.write(currentSize + "\n");
+            for(int i = 0; i<currentSize; i++){
+                fileArray.write(array[i] +", ");
+            }
+            fileArray.write(array[currentSize]);
+
+        } catch (Exception e) {
+            throw new Exception("Test", e);
+        }
+        finally {
+            fileArray.close();
+        }
     }
+
+
 
     @Override
     public void readFromFile(File file) throws IOException {
