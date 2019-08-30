@@ -1,13 +1,15 @@
 package collection.starter;
 
+import collection.dyn.array.DynamicArray;
 import collection.dyn.array.DynamicArrayImpl;
 
 import collection.dyn.stack.StackImpl;
 
 import java.io.File;
+import java.util.Random;
 
 public class DynamicCollectionStarter {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         DynamicArrayImpl test = new DynamicArrayImpl();
         test.add(123);
         test.add(14);
@@ -19,7 +21,15 @@ public class DynamicCollectionStarter {
         test.showArray();
         test.remove(0);
         test.showArray();
-        test.saveToFile();
+
+        DynamicArray example = new DynamicArrayImpl();
+        Random rnd = new Random(42);
+        for (int i = 0; i < 100; i++) {
+            example.add(rnd.nextInt(100000));
+        }
+
+        File file = new File("resources/arrayExample.txt");
+        example.saveToFile(file);
 
 
 //        StackImpl first = new StackImpl();

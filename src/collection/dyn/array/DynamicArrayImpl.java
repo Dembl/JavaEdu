@@ -66,18 +66,16 @@ public class DynamicArrayImpl implements DynamicArray {
     //формат файла первая строчка - размер
     //вторая строчка значения перечсленные через запятую
     @Override
-    public void saveToFile(File file) throws Exception {
-        FileWriter fileArray = new FileWriter("resources/numbersArray.txt");
-
+    public void saveToFile(File file) throws IOException{
+        FileWriter fileArray = new FileWriter(file);
         try {
             fileArray.write(currentSize + "\n");
             for(int i = 0; i<currentSize; i++){
-                fileArray.write(array[i] +", ");
+                fileArray.write(String.valueOf(array[i]));
+                if (i < currentSize - 1){
+                    fileArray.write(',');
+                }
             }
-            fileArray.write(array[currentSize]);
-
-        } catch (Exception e) {
-            throw new Exception("Test", e);
         }
         finally {
             fileArray.close();
