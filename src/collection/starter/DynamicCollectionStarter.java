@@ -7,7 +7,7 @@ import collection.dyn.stack.StackImpl;
 import java.io.File;
 
 public class DynamicCollectionStarter {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         DynamicArrayImpl test = new DynamicArrayImpl();
         test.add(123);
         test.add(14);
@@ -19,7 +19,7 @@ public class DynamicCollectionStarter {
         test.showArray();
         test.remove(0);
         test.showArray();
-        test.saveToFile(new File("resources/numbersArray"));
+        test.saveToFile();
 
 
 //        StackImpl first = new StackImpl();

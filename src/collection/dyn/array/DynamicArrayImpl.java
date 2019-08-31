@@ -70,14 +70,11 @@ public class DynamicArrayImpl implements DynamicArray {
         FileWriter fileArray = new FileWriter("resources/numbersArray.txt");
 
         try {
-            String size = String.valueOf(currentSize);
-            fileArray.write(size + "\n");
-            for (int i = 0;i<currentSize-1;i++){
-                String arr = String.valueOf(array[i]);
-                fileArray.write(arr + ", ");
+            fileArray.write(currentSize + "\n");
+            for(int i = 0; i<currentSize; i++){
+                fileArray.write(array[i] +", ");
             }
-            String last = String.valueOf(array[currentSize-1]);
-            fileArray.write(last);
+            fileArray.write(array[currentSize]);
 
         } catch (Exception e) {
             throw new Exception("Test", e);
