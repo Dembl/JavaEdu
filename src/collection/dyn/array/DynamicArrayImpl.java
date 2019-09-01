@@ -49,14 +49,14 @@ public class DynamicArrayImpl implements DynamicArray {
 //        currentSize--;//уменшаем размер массива на 1;
         if (index > currentSize)
             throw new NoSuchElementException("Запрошеный элемент отсутствует!");
-        int tempArray[] = Arrays.copyOfRange(array, 0, index);
+        int tempArray[]= Arrays.copyOfRange(array,0,index);
         int[] tempArray2 = new int[array.length];
-        for (int i = 0; i < tempArray.length; i++) {
-            tempArray2[i] = tempArray[i];
+        for (int i = 0; i <tempArray.length; i++) {
+            tempArray2[i]= tempArray[i];
         }
-        tempArray = tempArray2;
-        for (int i = index + 1; i < currentSize; i++) {
-            tempArray[i - 1] = array[i];
+        tempArray=tempArray2;
+        for (int i = index+1; i < currentSize; i++) {
+            tempArray[i-1] = array[i];
         }
         array = tempArray;
         currentSize--;
@@ -66,39 +66,37 @@ public class DynamicArrayImpl implements DynamicArray {
     //формат файла первая строчка - размер
     //вторая строчка значения перечсленные через запятую
     @Override
-    public void saveToFile(File file) throws Exception {
-        FileWriter fileArray = new FileWriter("resources/numbersArray.txt");
-
+    public void saveToFile(File file) throws IOException{
+        FileWriter fileArray = new FileWriter(file);
         try {
-            String size = String.valueOf(currentSize);
-            fileArray.write(size + "\n");
-            for (int i = 0; i < currentSize - 1; i++) {
-                String arr = String.valueOf(array[i]);
-                fileArray.write(arr + ", ");
+            fileArray.write(currentSize + "\n");
+            for(int i = 0; i<currentSize; i++){
+                fileArray.write(String.valueOf(array[i]));
+                if (i < currentSize - 1){
+                    fileArray.write(',');
+                }
             }
-            String last = String.valueOf(array[currentSize - 1]);
-            fileArray.write(last);
-        } catch (Exception e) {
-            throw new Exception("Test", e);
-        } finally {
+        }
+        finally {
             fileArray.close();
         }
     }
 
-        @Override
-        public void readFromFile (File file) throws IOException {
 
-        }
 
-        public void showArray () {
-            System.out.println("|||||||||||||||||||||||||");
-            for (int i = 0; i < currentSize; i++) {
-                if (i == 0)
-                    System.out.print(array[i]);
-                else
-                    System.out.printf(",%d", array[i]);
-            }
-            System.out.println("\n|||||||||||||||||||||||||");
-        }
+    @Override
+    public void readFromFile(File file) throws IOException {
+
     }
 
+    public void showArray(){
+        System.out.println("|||||||||||||||||||||||||");
+        for (int i = 0; i < currentSize; i++) {
+            if (i == 0)
+                System.out.print(array[i]);
+            else
+                System.out.printf(",%d", array[i]);
+        }
+        System.out.println("\n|||||||||||||||||||||||||");
+    }
+}
