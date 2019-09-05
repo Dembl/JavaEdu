@@ -11,9 +11,14 @@ public class Report implements Printable{
     @Override
     public void print() throws IOException {
         //todo perepisat na try-catch-with-resources
-        FileWriter fileWriter = new FileWriter("out/report.txt");
+        try(FileWriter fileWriter = new FileWriter("out/report.txt")){
+            fileWriter.write("Name: "  + this.name);
+            fileWriter.write('\n' + this.body);
+
+        }
+       /* FileWriter fileWriter = new FileWriter("out/report.txt");
         fileWriter.write("Name: "  + this.name);
         fileWriter.write('\n' + this.body);
-
+        */
     }
 }

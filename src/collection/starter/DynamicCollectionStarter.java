@@ -20,6 +20,7 @@ public class DynamicCollectionStarter {
         test.remove(0);
         test.showArray();
         test.saveToFile(new File("resources/numbersArray"));
+        test.readFromFile(new File("resources/numbersArray"));
 
 
 //        StackImpl first = new StackImpl();

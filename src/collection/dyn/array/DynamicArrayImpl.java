@@ -86,7 +86,21 @@ public class DynamicArrayImpl implements DynamicArray {
 
     @Override
     public void readFromFile(File file) throws IOException {
+        FileReader fileArray = new FileReader(file);
+        BufferedReader bufferedArray = new BufferedReader(fileArray);
+        try{
+            String size = bufferedArray.readLine();
 
+
+        while (size != null)
+        {
+            size = bufferedArray.readLine();
+            System.out.println(size);
+        }
+        }
+        finally {
+            fileArray.close();
+        }
     }
 
     public void showArray(){
