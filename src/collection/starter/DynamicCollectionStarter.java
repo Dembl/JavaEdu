@@ -14,15 +14,18 @@ public class DynamicCollectionStarter {
         test.add(42);
         test.add(754);
         test.add(23557);
-        System.out.println(test.get(2));
-        System.out.println(test.get(5));
-        test.showArray();
+        //test.showArray();
         test.remove(0);
-        test.showArray();
+        //test.showArray();
         test.saveToFile(new File("resources/numbersArray"));
-        test.readFromFile(new File("resources/numbersArray"));
+        DynamicArrayImpl test2 = new DynamicArrayImpl();
+        test2.readFromFile(new File("resources/numbersArray2"));
 
 
+
+        System.out.println("^^^^^^^^^^^^");
+        test2.showArray();
+        System.out.println(test2.get(7) + test2.get(2));
 //        StackImpl first = new StackImpl();
 //        first.push(2);
 //        first.push(7);
